@@ -68,7 +68,6 @@ public class UserController {
             user.setPassword(password);
             user.setStoreId(storeId.longValue());
             userService.register(user);
-
             return ResponseEntity.ok(Map.of("message", "User registered successfully"));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
